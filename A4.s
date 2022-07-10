@@ -13,9 +13,9 @@ _start:
 	pushl (x)
 	pushl %eax
 	call strchr # TODO 
-	pushl %eax
-	pushl str2
-	call printf
+	#pushl %eax
+	#pushl str2
+	#call printf
 	leal liste, %ebx
 	subl %ebx, %eax # Die Differenz in byte zwischen Afnagswert und gefundener Position
 	
@@ -25,11 +25,11 @@ division:
 	movl $0, %ecx
 	subl $4, %eax
 	cmpl $0, %eax
-	je exit
+	je end
 	incl %ecx
 	
 	
-exit:
+end:
 	# verwende printf umdas gesuchte element und die Position des gefundenen Elements zu
 	# printf(" %d %d", x, %ecx)
 	pushl %ecx
